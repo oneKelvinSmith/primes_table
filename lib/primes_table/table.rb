@@ -7,8 +7,12 @@ module PrimesTable
     end
 
     def to_s
-      table = first_row
-      table = append_rows(table)
+      table = row(cell, ->(n) { n })
+
+      numbers.each do |n|
+        table += row(cell(n), ->(y) { n * y })
+      end
+
       table
     end
 
@@ -16,23 +20,12 @@ module PrimesTable
 
     attr_reader :numbers
 
-    def first_row
-      row = cell
-      numbers.map do |num|
-        row += cell(num)
+    def row(first_cell, contents)
+      row = first_cell
+      numbers.map do |number|
+        row += cell(contents.call(number))
       end
       row += "\n"
-    end
-
-    def append_rows(table)
-      numbers.each do |x|
-        table += cell(x)
-        numbers.each do |y|
-          table += cell(x * y)
-        end
-        table += "\n"
-      end
-      table
     end
 
     def cell(entry = '')
