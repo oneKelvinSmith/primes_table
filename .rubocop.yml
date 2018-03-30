@@ -1,0 +1,11 @@
+AllCops:
+  TargetRubyVersion: 2.5
+Style/Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - '**/spec/**/*.rb'
+    - '**/*_spec.rb'
