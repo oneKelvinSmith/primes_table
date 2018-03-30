@@ -5,5 +5,8 @@ require 'primes_table/table'
 require 'primes_table/version'
 
 module PrimesTable
-  # Your code goes here...
+  def self.run(argv)
+    primes = Primes.take(argv)
+    print Table.new(primes).to_s
+  end
 end
