@@ -5,8 +5,8 @@ require 'primes_table/table'
 require 'primes_table/version'
 
 module PrimesTable
-  def self.run(arg = '10')
-    number = arg.to_i
+  def self.run(arg = nil)
+    number = arg.nil? ? 10 : arg.to_i
     if number <= 0
       puts 'Please provide a positive integer...'
     else

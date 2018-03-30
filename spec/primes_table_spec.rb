@@ -40,7 +40,7 @@ RSpec.describe PrimesTable do
 
     context 'when a bad argument is given' do
       it 'displays a helpul error message' do
-        [-42, 'bad', nil].each do |bad_arg|
+        ['bad', '-42'].each do |bad_arg|
           expect { described_class.run(bad_arg) }
             .to output("Please provide a positive integer...\n").to_stdout
         end
