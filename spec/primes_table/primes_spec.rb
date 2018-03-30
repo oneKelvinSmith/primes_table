@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'primes_table/primes'
 
 RSpec.describe PrimesTable::Primes do
   describe '::FIRST_TEN' do
