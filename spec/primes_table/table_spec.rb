@@ -17,5 +17,13 @@ RSpec.describe PrimesTable::Table do
         \  5 10 15 20 25
         TABLE
     end
+
+    context 'when list of numbers is empty' do
+      let(:numbers) { [] }
+
+      it 'outputs a multiplication table for as a string' do
+        expect(subject.to_s).to eq 'Empty table'
+      end
+    end
   end
 end
